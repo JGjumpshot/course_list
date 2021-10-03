@@ -6,4 +6,4 @@ class CourseList:
         self.head = head
     
     def insert(self, value):
-        course = Course(value)
+        new_course = Course(value)
