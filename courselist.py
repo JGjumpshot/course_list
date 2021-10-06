@@ -13,6 +13,13 @@ class CourseList:
         new_course.next_node = self.head
         self.head = new_course
         self.size += 1
+    def find(self, element):
+        current = self.head
+        while current is not None:
+            if current.course_name == element:
+                return self.size
+            current = current.next_node
+        return -1
     def __iter__(self):
         return self
     def __next__(self):
