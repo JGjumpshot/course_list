@@ -1,11 +1,12 @@
+"""Linked list"""
 class CourseList:
+    """CourseList class"""
     def __init__(self, head=None):
+        """init function"""
         self.head = head
         self.size = 0
-
-    def get_size(self):
-        return self.size
     def insert(self, course):
+        """insert into the list"""
         new_course = course
         if self.head is None:
             self.head = new_course
@@ -13,6 +14,7 @@ class CourseList:
         self.head = new_course
         self.size += 1
     def find(self, element):
+        """Find and return the element"""
         current = self.head
         while current is not None:
             print(current)
@@ -21,9 +23,8 @@ class CourseList:
             current = current.next_node
         return -1
     def __iter__(self):
+        """iterate"""
         return self
     def __next__(self):
-        course = self.head
-        
-
-        
+        """next"""
+        # course = self.head
