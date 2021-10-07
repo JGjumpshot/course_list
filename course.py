@@ -1,6 +1,6 @@
 class Course:
     """course class"""
-    def __init__(self, course_number, course_name, credit_hrs, grade, next_node=None):
+    def __init__(self, course_number=1200, course_name="Partying", credit_hrs=2.0, grade=4.0, next_node=None):
         self.course_number = course_number
         self.course_name = course_name
         self.credit_hrs = credit_hrs

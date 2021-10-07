@@ -5,9 +5,7 @@ def main():
     linked_list = CourseList()
     test = open("data.txt", "r")
     for i in test.readlines():
-        # print(type(i))
         course = i.strip().split(',')
-        # print(course)
         course = Course(int(course[0]), course[1], float(course[2]), float(course[3]))
         linked_list.insert(course)
     iter_linked_list = linked_list.__iter__()

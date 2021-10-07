@@ -18,7 +18,7 @@ class CourseList:
     def __next__(self):
         course = self.head
         while course.next_node is not None:
-            return course
+            yield course
             course = course.next_node
 
         
