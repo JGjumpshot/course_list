@@ -31,9 +31,10 @@ class CourseList:
         return self
     def __next__(self):
         """next"""
-        if self.next_node is None:
-            raise StopIteration
-        self.current_node = self.next_node
-        self.next_node = self.next_node.next
-        return self.current_node.data
+        return self.next_node
+        # if self.next_node is None:
+        #     raise StopIteration
+        # self.current_node = self.next_node
+        # self.next_node = self.next_node.next
+        # return self.current_node.__str__()
         # course = self.head
