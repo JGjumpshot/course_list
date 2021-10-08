@@ -13,6 +13,9 @@ class CourseList:
         new_course.next_node = self.head
         self.head = new_course
         self.size += 1
+    def size(self):
+        """get size of linked list"""
+        self.size
     def find(self, element):
         """Find and return the element"""
         current = self.head
