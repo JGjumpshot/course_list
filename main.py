@@ -14,12 +14,8 @@ def main():
     # print(iter_linked_list.__next__())
     # print(linked_list.get_size())
     my_list = linked_list
-    # print(my_list.__iter__().head.name())
-    # print(my_list.__iter__().head.name())
-    # print(my_list.__iter__().head.name())
-    print(my_list.__iter__().head.name())
-    print(next(my_list.)
-    print(my_list.__next__())
-    print(my_list.__next__())
+    # print(str(my_list.__iter__().head.name()))
+    for i in my_list:
+        print(i.name())
 if __name__ == "__main__":
     main()
