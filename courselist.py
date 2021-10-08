@@ -22,9 +22,18 @@ class CourseList:
                 return current
             current = current.next_node
         return -1
+    def calculate_gpa(self):
+        return self.head.name
     def __iter__(self):
         """iterate"""
+        self.current_node = None
+        self.next_node = self.head
         return self
     def __next__(self):
         """next"""
+        if self.next_node is None:
+            raise StopIteration
+        self.current_node = self.next_node
+        self.next_node = self.next_node.next
+        return self.current_node.data
         # course = self.head

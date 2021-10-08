@@ -41,13 +41,13 @@ def test_course_creation_with_parameters():
         Course(1234, "Test Name", 0.0, -2.0)
 
 
-# def test_empty_courselist():
-#     cl = CourseList()
-#     assert cl.head == None
-#     assert cl.size() == 0
-#     assert cl.calculate_gpa() == 0.0
-#     assert cl.calculate_gpa() == 0.0
-#     assert cl.is_sorted()
+def test_empty_courselist():
+    cl = CourseList()
+    assert cl.head == None
+    assert cl.size() == 0
+    assert cl.calculate_gpa() == 0.0
+    assert cl.calculate_gpa() == 0.0
+    assert cl.is_sorted()
 
 # def test_insert():
 #     random.seed(0)
