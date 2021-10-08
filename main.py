@@ -17,7 +17,9 @@ def main():
     # print(my_list.__iter__().head.name())
     # print(my_list.__iter__().head.name())
     # print(my_list.__iter__().head.name())
-    for i in my_list:
-        print(i)
+    print(my_list.__iter__().head.name())
+    print(next(my_list.)
+    print(my_list.__next__())
+    print(my_list.__next__())
 if __name__ == "__main__":
     main()
