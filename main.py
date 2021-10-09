@@ -17,7 +17,7 @@ def main():
     # print(my_list.size())
     # print(str(my_list.__iter__().head.name()))
     print(my_list)
-    
+    my_list.remove(2420)
     print(f"\n{my_list}")
     # print(my_list)
     # for i in my_list:

@@ -4,47 +4,52 @@ class CourseList:
     def __init__(self, head=None):
         """init function"""
         self.head = head
-        self.tail = None
-        self.size = 0
+        # self.tail = None
+        self._size = 0
     def is_empty(self):
         """Is empty function"""
         return self.head
     def insert(self, course):
         """insert into the list"""
         new_course = course
-        if self.head is None:
-            self.tail = new_course
-        
-            # current = self.head
-            # while current is not None:
-            #     if current.next_node is None:
-            #         self.head = new_course
-            #     elif current.next_node.number <= 
-                  
-            #     # if current.next_node.number
-            #     current = current.next_node
+        # if self.head is None:
+        #     self.head = new_course
+        # if new_course.number() <= self.head.number():
+        #     new_course.next_node = self.head
+        #     self.head = new_course
+        # current = self.head
+        # while current is not None:
+        #     if current.next_node is None:
+        #         current.next_node = new_course
+        #     elif current.next_node.number() >= new_course.number():
+        #         new_course.next_node = current.next_node
+        #         current.next_node = new_course
+            
+            # if current.next_node.number
+            #current = current.next_node
         
         new_course.next_node = self.head
         self.head = new_course
-        self.size += 1
+        self._size += 1
     def remove(self, course):
         """Remove single item from the list"""
         current = self.head
         previous = None
         while current is not None:
-            if current.data == course.data:
+            if current.course_number == course:
                 break
             previous = current
             current = current.next_node
         if current is None:
             raise ValueError("{} is not in the list".format(course))
-        if previous is None:
+        if previous.next_node is None:
             self.head = current.next_node
         else:
             previous.next_node = current.next_node
+        self._size -= 1
     def size(self):
-        """get size of linked list"""
-        return self.size
+        """get _size of linked list"""
+        return self._size
     def find(self, element):
         """Find and return the element"""
         current = self.head
