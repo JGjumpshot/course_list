@@ -15,7 +15,10 @@ class Course:
         if isinstance(self.course_name, str) is False :
             raise ValueError("String required for course name")
         if isinstance(self.credit_hrs, float) is False :
-            raise ValueError("Float required for credit hours")
+            if isinstance(self.credit_hrs, int) is True:
+                float(self.credit_hrs)
+            else:
+                raise ValueError("Float required for credit hours")
         if self.credit_hrs < 0.0:
             raise ValueError("credit hrs should be a non-negative number")
         if isinstance(self.grade_pts, float) is False :

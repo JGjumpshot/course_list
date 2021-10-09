@@ -39,7 +39,7 @@ class CourseList:
         if current is None:
             raise ValueError("{} is not in the list".format(course))
         if previous is None:
-            self.head = current.next
+            self.head = current.next_node
         else:
             previous.next_node = current.next_node
     def size(self):

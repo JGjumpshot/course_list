@@ -17,7 +17,8 @@ def main():
     # print(my_list.size())
     # print(str(my_list.__iter__().head.name()))
     print(my_list)
-    my_list.remove(Course(2810, "Computer Architecture", 3.0, 3.8))
+    
+    print(f"\n{my_list}")
     # print(my_list)
     # for i in my_list:
     #     print(i)
