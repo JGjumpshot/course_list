@@ -22,8 +22,11 @@ class Course:
             raise ValueError("Float required for grade")
         if self.grade_pts < 0.0 or self.grade_pts > 4.0:
             raise ValueError("Please enter valid grade points")
-    def next(self):
-        self.next_node
+    # def next(self):
+    #     return self.next_node
+    def get_data(self):
+        return self.course_number, self.course_name, self.credit_hrs, self.grade_pts
+    data = property(get_data)
     def number(self):
         """return course number"""
         return self.course_number

@@ -14,9 +14,13 @@ def main():
     # print(iter_linked_list.__next__())
     # print(linked_list.get_size())
     my_list = linked_list
-    print(my_list.size())
+    # print(my_list.size())
     # print(str(my_list.__iter__().head.name()))
+    print(my_list)
+    my_list.remove(Course(2810, "Computer Architecture", 3.8, 3.0))
+    # print(my_list)
     # for i in my_list:
-    #     print(i.name())
+    #     print(i)
+
 if __name__ == "__main__":
     main()
