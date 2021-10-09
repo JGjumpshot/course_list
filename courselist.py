@@ -32,7 +32,7 @@ class CourseList:
         current = self.head
         previous = None
         while current is not None:
-            if current.data == course:
+            if current.data == course.data:
                 break
             previous = current
             current = current.next_node
@@ -41,7 +41,7 @@ class CourseList:
         if previous is None:
             self.head = current.next
         else:
-            previous.next = current.next
+            previous.next_node = current.next_node
     def size(self):
         """get size of linked list"""
         return self.size
