@@ -12,25 +12,33 @@ class CourseList:
     def insert(self, course):
         """insert into the list"""
         new_course = course
-        # if self.head is None:
-        #     self.head = new_course
-        # if new_course.number() <= self.head.number():
-        #     new_course.next_node = self.head
-        #     self.head = new_course
-        # current = self.head
-        # while current is not None:
-        #     if current.next_node is None:
-        #         current.next_node = new_course
-        #     elif current.next_node.number() >= new_course.number():
-        #         new_course.next_node = current.next_node
-        #         current.next_node = new_course
+        if self.head is None:
+            self.head = new_course
+            self._size += 1
+            return
+        if new_course.number() <= self.head.number():
+            new_course.next_node = self.head
+            self.head = new_course
+            self._size += 1
+            return 
+        current = self.head
+        while current is not None:
+            if current.next_node is None:
+                current.next_node = new_course
+                self._size += 1
+                return
+            elif current.next_node.number() >= new_course.number():
+                new_course.next_node = current.next_node
+                current.next_node = new_course
+                self._size += 1
+                return
             
-            # if current.next_node.number
-            #current = current.next_node
+            # if current.next_node.number <
+            current = current.next_node
         
-        new_course.next_node = self.head
-        self.head = new_course
-        self._size += 1
+        # new_course.next_node = self.head
+        # self.head = new_course
+        # self._size += 1
     def remove(self, course):
         """Remove single item from the list"""
         current = self.head
@@ -54,13 +62,46 @@ class CourseList:
         """Find and return the element"""
         current = self.head
         while current is not None:
-            if current.course_name == element:
-                return True
+            if current.course_number == element:
+                return current
             current = current.next_node
         return -1
     def calculate_gpa(self):
-        return self.head.name
-
+        current = self.head
+        _grade_pts = 0
+        _credits = 0
+        _raw_value = 0
+        while current is not None:
+            _grade_pts += current.grade()
+            _credits += current.credit_hr()
+            _raw_value += current.grade() * current.credit_hr()
+            current = current.next_node
+        if current is not None:
+            final_gpa = _raw_value / _credits
+            return round(final_gpa, 3)
+        else:
+            return 0.0
+        # while current is not None:
+        #     if current.next_node is None:
+        #         break
+    def is_sorted(self):
+        current = self.head
+        value = 0
+        if current is None:
+            return True
+        try:
+            while current is not None:
+                if current.next_node is None:
+                    value = True
+                    return value
+                if current.number() <= current.next_node.number():
+                    current = current.next_node
+                else:
+                    value = False
+                    return value
+        except:
+            value = False
+            return False
     def __str__(self):
         list_string = None
         current = self.head

@@ -49,36 +49,36 @@ def test_empty_courselist():
     assert cl.calculate_gpa() == 0.0
     assert cl.is_sorted()
 
-# def test_insert():
-#     random.seed(0)
-#     cl = CourseList()
-#     for _ in range(37):
-#         cl.insert(Course(random.randrange(1000, 7000), "test", 1.0, 2.0))
+def test_insert():
+    random.seed(0)
+    cl = CourseList()
+    for _ in range(37):
+        cl.insert(Course(random.randrange(1000, 7000), "test", 1.0, 2.0))
 
-#     assert cl.size() == 37
-#     assert cl.is_sorted()
+    assert cl.size() == 37
+    assert cl.is_sorted()
 
-# def test_remove():
-#     random.seed(0)
-#     cl = CourseList()
-#     courseNumbers = []
-#     for _ in range(37):
-#         courseNumbers.append(random.randrange(1000, 7000))
-#     for number in courseNumbers:
-#         cl.insert(Course(number, "test", 1.0, 2.0))
+def test_remove():
+    random.seed(0)
+    cl = CourseList()
+    courseNumbers = []
+    for _ in range(37):
+        courseNumbers.append(random.randrange(1000, 7000))
+    for number in courseNumbers:
+        cl.insert(Course(number, "test", 1.0, 2.0))
 
-#     course = cl.find(courseNumbers[0])
-#     assert course.number() == courseNumbers[0]
-#     course = cl.find(courseNumbers[10])
-#     assert course.number() == courseNumbers[10]
-#     course = cl.find(courseNumbers[36])
-#     assert course.number() == courseNumbers[36]
+    course = cl.find(courseNumbers[0])
+    assert course.number() == courseNumbers[0]
+    course = cl.find(courseNumbers[10])
+    assert course.number() == courseNumbers[10]
+    course = cl.find(courseNumbers[36])
+    assert course.number() == courseNumbers[36]
 
-#     for i in range(0, 30, 3):
-#         cl.remove(courseNumbers[i])
+    for i in range(0, 30, 3):
+        cl.remove(courseNumbers[i])
 
-#     assert cl.size() == 27
-#     assert cl.is_sorted()
+    assert cl.size() == 27
+    assert cl.is_sorted()
 
 # def test_remove_all():
 #     cl = CourseList()
