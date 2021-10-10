@@ -25,8 +25,6 @@ class Course:
             raise ValueError("Float required for grade")
         if self.grade_pts < 0.0 or self.grade_pts > 4.0:
             raise ValueError("Please enter valid grade points")
-    # def next(self):
-    #     return self.next_node
     def get_data(self):
         return self.course_number, self.course_name, self.credit_hrs, self.grade_pts
     data = property(get_data)
@@ -46,16 +44,6 @@ class Course:
         return self.grade_pts
     def __str__(self):
         """return string"""
-        return f"cs{self.course_number}{self.course_name}Grade: {self.grade_pts}Credit Hours:{self.credit_hrs}"
-    # def get_next(self):
-    #     self.next_node
-    # def set_next(self, next_node):
-    #     self.next_node = next_node
+        return f"cs{self.course_number} {self.course_name} Grade:{self.grade_pts} Credit Hours:{self.credit_hrs}"
 
-# new_course = Course(2420,'Intro to Algorithms and Data structures',1.0,4.0)
-# print(new_course)
-# test = open("data.txt", "r")
-# print(test.readlines())
-# print(new_course.__str__())
-# print(type(new_course.course_number))
         

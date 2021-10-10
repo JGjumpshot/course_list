@@ -80,50 +80,50 @@ def test_remove():
     assert cl.size() == 27
     assert cl.is_sorted()
 
-# def test_remove_all():
-#     cl = CourseList()
-#     cl.insert(Course(1000))
-#     for _ in range(20):
-#         cl.insert(Course(1200))
-#     cl.insert(Course(1800))
-#     assert cl.size() == 22
-#     cl.remove_all(1200)
-#     assert cl.size() == 2
+def test_remove_all():
+    cl = CourseList()
+    cl.insert(Course(1000))
+    for _ in range(20):
+        cl.insert(Course(1200))
+    cl.insert(Course(1800))
+    assert cl.size() == 22
+    cl.remove_all(1200)
+    assert cl.size() == 2
 
 
-# def test_gpa():
-#     random.seed(0)
-#     cl = CourseList()
-#     total_credits = 0.0
-#     total_grade_points = 0.0
-#     for _ in range(10):
-#         credits = random.uniform(1.0, 5.0)
-#         grade = random.uniform(0.0, 4.0)
-#         total_credits += credits
-#         total_grade_points += credits * grade
-#         cl.insert(Course(1234, "Test", credits, grade))
+def test_gpa():
+    random.seed(0)
+    cl = CourseList()
+    total_credits = 0.0
+    total_grade_points = 0.0
+    for _ in range(10):
+        credits = random.uniform(1.0, 5.0)
+        grade = random.uniform(0.0, 4.0)
+        total_credits += credits
+        total_grade_points += credits * grade
+        cl.insert(Course(1234, "Test", credits, grade))
 
-#     assert math.isclose(cl.calculate_gpa(), total_grade_points / total_credits)
+    assert math.isclose(cl.calculate_gpa(), total_grade_points / total_credits)
 
-# def test_iterate_list():
-#     cl = CourseList()
-#     cl.insert(Course(1000))
-#     for _ in range(20):
-#         cl.insert(Course(1200))
-#     totalCourses = 0
-#     for _ in cl:
-#         totalCourses += 1
-#     assert totalCourses == 21
+def test_iterate_list():
+    cl = CourseList()
+    cl.insert(Course(1000))
+    for _ in range(20):
+        cl.insert(Course(1200))
+    totalCourses = 0
+    for _ in cl:
+        totalCourses += 1
+    assert totalCourses == 21
 
-# def test_code_quality():
-#     from pylint.lint import Run
+def test_code_quality():
+    from pylint.lint import Run
 
-#     results = Run(['course.py'], exit=False)
-#     expected = 8.5
-#     actual = results.linter.stats['global_note']
-#     assert actual >= expected
+    results = Run(['course.py'], exit=False)
+    expected = 8.5
+    actual = results.linter.stats['global_note']
+    assert actual >= expected
 
-#     results = Run(['courselist.py'], exit=False)
-#     expected = 8.5
-#     actual = results.linter.stats['global_note']
-#     assert actual >= expected
+    results = Run(['courselist.py'], exit=False)
+    expected = 8.5
+    actual = results.linter.stats['global_note']
+    assert actual >= expected

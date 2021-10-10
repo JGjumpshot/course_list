@@ -55,6 +55,25 @@ class CourseList:
         else:
             previous.next_node = current.next_node
         self._size -= 1
+    def remove_all(self, course):
+        """Remove all items with course num from the list"""
+        temp = self.head
+        previous = None
+
+        
+        while temp is not None and temp.number() == course:
+            self.head = temp.next_node
+            temp = self.head
+        while temp is not None:
+            while temp is not None and temp.number() != course:
+                previous = temp
+                temp = temp.next_node
+            if temp is None:
+                return self.head
+            previous.next_node = temp.next_node
+            temp = previous.next_node
+            self._size -= 1
+        return self.head
     def size(self):
         """get _size of linked list"""
         return self._size
@@ -76,11 +95,14 @@ class CourseList:
             _credits += current.credit_hr()
             _raw_value += current.grade() * current.credit_hr()
             current = current.next_node
-        if current is not None:
+        if _raw_value == 0.0 and _credits == 0.0:
+            return 0.0
+        else:
             final_gpa = _raw_value / _credits
+        if current is not None:
             return round(final_gpa, 3)
         else:
-            return 0.0
+            return final_gpa
         # while current is not None:
         #     if current.next_node is None:
         #         break
@@ -107,9 +129,9 @@ class CourseList:
         current = self.head
         while current is not None:
             if list_string is None:
-                list_string = str(current)
+                list_string = " " +str(current) + "\n"
             else:
-                list_string = list_string + " " + str(current)
+                list_string = list_string + " " + str(current) + "\n"
             current = current.next_node
         return list_string
     def __iter__(self):
@@ -123,6 +145,6 @@ class CourseList:
         if self.next_node is None:
             raise StopIteration
         self.current_node = self.next_node
-        self.next_node = self.next_node.next()
+        self.next_node = self.next_node.next_node
         return self.current_node.__str__()
         # course = self.head
