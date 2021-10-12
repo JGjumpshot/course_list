@@ -12,9 +12,7 @@ def main():
         linked_list.insert(course)
     my_list = linked_list
     print(my_list)
-    # print(my_list.remove_all())
-    # for i in my_list:
-    #     print(i)
+    print(f"\n\n Cumulative GPA: {round(my_list.calculate_gpa(), 3)}")
 
 if __name__ == "__main__":
     main()
